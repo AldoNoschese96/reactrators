@@ -1,0 +1,29 @@
+{
+  "name": "reactrators",
+  "version": "0.0.1",
+  "description": "A React Decorators library",
+  "main": "dist/reactrators.js",
+  "module": "dist/reactrators.mjs",
+  "typings": "dist/reactrators.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "author": "aldonoschese",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "esbuild": "^0.19.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.1.4",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "ts-jest": "^29.1.1"
+  }
+}
