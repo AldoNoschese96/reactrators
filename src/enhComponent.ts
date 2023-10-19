@@ -38,14 +38,14 @@ const _composeFns = (toCompose: (HookFunction | HookEntry)[]): Record<string, an
         return acc
     }, {});
 }
-const enhComponent = (fn: () => { hooks: (HookFunction | HookEntry)[], services: (ServiceFunction | ServiceEntry)[] }) => <P extends EnhancedProps>(
+const enhComponent = (fn: (props?: unknown) => { hooks: (HookFunction | HookEntry)[], services: (ServiceFunction | ServiceEntry)[] }) => <P extends EnhancedProps>(
     Component: ComponentType<P>
 )  => {
     return (props: P) => {
         const { hooks, services } = fn();
         const hooksProc = _composeFns(hooks);
         const servicesProc = _composeFns(services);
-        return React.createElement(Component, { ...hooksProc, ...servicesProc, ...props});
+        return React.createElement(Component, { ...hooksProc, ...servicesProc, ...props });
     }
 }
 
