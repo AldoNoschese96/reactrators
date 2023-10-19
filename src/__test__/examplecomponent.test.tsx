@@ -5,13 +5,13 @@ import enhComponent from "../enhComponent";
 function Two(): any {
     return { methods: {}, props: { field: "field" } }
 }
-const useCounterIncrement = () => {
+const useCounterIncrement = (props: any): any => {
     const [count, setCount] = React.useState(0);
     const increment = () => setCount(count + 1);
     return { count, increment };
 }
 
-const usePrintRandomNumber = (): any => {
+const usePrintRandomNumber = (props: any): any => {
     const [randomNumber, setRandomNumber] = React.useState(1);
     const printRandomNumber = () => setRandomNumber(Math.random());
     return { randomNumber, printRandomNumber };
