@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import { render, screen } from "@testing-library/react";
-import enhComponent from "../enhComponent";
+import composable from "../composable";
 function Two(): any {
     return { methods: {}, props: { field: "field" } }
 }
@@ -27,10 +27,11 @@ const Template = (props: any) => {
     )
 }
 
-const MyComponent = enhComponent((props: any) => ({
+const MyComponent = composable((props: any) => ({
     injectable: [
         [ useCounterIncrement, { title: props?.title } ],
-        usePrintRandomNumber
+        usePrintRandomNumber,
+        Two
     ]
 }))(Template);
 

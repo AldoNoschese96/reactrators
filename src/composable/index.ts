@@ -1,10 +1,7 @@
 import * as React from  "react";
 import {ComponentType} from "react";
+import {EnhancedProps, InjectableEntry, InjectableFunction} from "./types";
 
-type InjectableParams = Record<string, any>;
-type InjectableFunction = (params?: InjectableParams) => InjectableParams;
-type InjectableEntry = [InjectableFunction, InjectableParams];
-type EnhancedProps = { [key: string]: any; };
 
 const _composeFns = (toCompose: (InjectableFunction | InjectableEntry)[]): Record<string, any> => {
     return toCompose.reduce((acc, fn) => {
@@ -32,7 +29,7 @@ const _composeFns = (toCompose: (InjectableFunction | InjectableEntry)[]): Recor
         return acc
     }, {});
 }
-const enhComponent = (fn: (props?: Record<string, any>) => { injectable: (InjectableFunction | InjectableEntry)[] }) => <P extends EnhancedProps>(
+const composable = (fn: (props?: Record<string, any>) => { injectable: (InjectableFunction | InjectableEntry)[] }) => <P extends EnhancedProps>(
     Component: ComponentType<P>
 )  => {
     return (props: P) => {
@@ -42,4 +39,4 @@ const enhComponent = (fn: (props?: Record<string, any>) => { injectable: (Inject
     }
 }
 
-export default enhComponent;
+export default composable;
