@@ -1,7 +1,5 @@
-import * as React from  "react";
-import {ComponentType} from "react";
+import {ComponentType, createElement } from "react";
 import {ComposableOptions, EnhancedProps, InjectableEntry, InjectableFunction} from "./types";
-
 const _composeFns = (toCompose: (InjectableFunction | InjectableEntry)[], opts?: ComposableOptions): Record<string, any> => {
     return toCompose.reduce((acc, fn) => {
 
@@ -40,7 +38,7 @@ const composable = (fn: (props?: Record<string, any>) => (InjectableFunction | I
     return (props: P) => {
         const injectable = fn();
         const toInject = _composeFns(injectable, opts);
-        return React.createElement(Component, { ...toInject, ...props });
+        return createElement(Component, { ...toInject, ...props });
     }
 }
 

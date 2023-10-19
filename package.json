@@ -1,10 +1,22 @@
 {
-  "name": "reactrators",
+  "name": "react-composable",
   "version": "0.0.1",
-  "description": "A React Decorators library",
+  "description": "A React library for composing and enhancing components with flexible and chainable functions. Simplify the process of injecting functionality and props into React components by providing a composable utility for building component enhancers.",
   "main": "dist/reactrators.js",
   "module": "dist/reactrators.mjs",
   "typings": "dist/reactrators.d.ts",
+  "keywords": [
+    "React",
+    "Component Composition",
+    "Function Composition",
+    "Component Enhancement",
+    "Composable Functions",
+    "Chainable",
+    "Props Injection",
+    "Component Utilities",
+    "React Library",
+    "React Components"
+  ],
   "scripts": {
     "build": "rollup -c",
     "test": "jest"
