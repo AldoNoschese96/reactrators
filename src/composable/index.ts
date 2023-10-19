@@ -2,7 +2,6 @@ import * as React from  "react";
 import {ComponentType} from "react";
 import {EnhancedProps, InjectableEntry, InjectableFunction} from "./types";
 
-
 const _composeFns = (toCompose: (InjectableFunction | InjectableEntry)[]): Record<string, any> => {
     return toCompose.reduce((acc, fn) => {
 

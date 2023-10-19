@@ -33,6 +33,10 @@ const Template = (props: any) => {
   )
 }
 
+// 1 fetching
+// 2 computazione
+// 3 DTO
+
 const MyComponent = composable((props: any) => ([
     [useCounterIncrement, {title: props?.title}],
     otherFunction,
