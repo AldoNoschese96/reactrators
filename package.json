@@ -1,5 +1,5 @@
 {
-  "name": "react-composable",
+  "name": "reactrators",
   "version": "0.0.1",
   "description": "A React library for composing and enhancing components with flexible and chainable functions. Simplify the process of injecting functionality and props into React components by providing a composable utility for building component enhancers.",
   "main": "dist/reactrators.js",
