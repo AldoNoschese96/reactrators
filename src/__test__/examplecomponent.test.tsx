@@ -9,7 +9,7 @@ function Two(): any {
 const useCounterIncrement = (props: any): any => {
   const [count, setCount] = React.useState(0);
   const increment = () => setCount(count + 1);
-  return {count, increment};
+  return { count, increment };
 }
 
 const usePrintRandomNumber = (props: any): any => {
@@ -18,8 +18,18 @@ const usePrintRandomNumber = (props: any): any => {
   return {randomNumber, printRandomNumber};
 }
 
-const otherFunction = (props: any): any => {
+const fn1 = (props: any): any => {
+    console.log(props, "props fn1")
   return {other: "other"};
+}
+const fn2 = (props: any): any => {
+    console.log(props, "props fn2")
+    return {other2: "other"};
+}
+
+const fn3 = (props: any): any => {
+    console.log(props, "props fn3")
+    return { other3: "other" };
 }
 
 const Template = (props: any) => {
@@ -33,17 +43,11 @@ const Template = (props: any) => {
   )
 }
 
-// 1 fetching
-// 2 computazione
-// 3 DTO
-
-const MyComponent = composable((props: any) => ([
-    [useCounterIncrement, {title: props?.title}],
-    otherFunction,
-    usePrintRandomNumber,
-    Two
-  ]
-))(Template);
+const MyComponent = composable((props: any) => (
+    [[fn1, { miaprops: "CIAO" }], [fn2, {other: "CIAO 2"}], fn3]
+), {
+    chainable: true,
+})(Template);
 
 describe("Enh Component Function", () => {
 
@@ -54,8 +58,8 @@ describe("Enh Component Function", () => {
 
   test("receive injected props", () => {
     render(<MyComponent title={"TITLE"}/>);
-    expect(screen.getByText("0")).toBeDefined();
-    expect(screen.getByText("1")).toBeDefined();
+    // expect(screen.getByText("0")).toBeDefined();
+    // expect(screen.getByText("1")).toBeDefined();
     expect(screen.getByText("other")).toBeDefined();
   });
 });
