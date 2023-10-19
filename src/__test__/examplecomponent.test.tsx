@@ -28,8 +28,10 @@ const Template = (props: any) => {
 }
 
 const MyComponent = enhComponent((props: any) => ({
-    hooks: [[ useCounterIncrement, { title: props?.title } ], usePrintRandomNumber],
-    services: [[Two, { title: props?.title }]],
+    injectable: [
+        [ useCounterIncrement, { title: props?.title } ],
+        usePrintRandomNumber
+    ]
 }))(Template);
 
 describe("Enh Component Function", () => {
