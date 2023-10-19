@@ -38,7 +38,7 @@ const _composeFns = (toCompose: (HookFunction | HookEntry)[]): Record<string, an
         return acc
     }, {});
 }
-const enhComponent = (fn: (props?: unknown) => { hooks: (HookFunction | HookEntry)[], services: (ServiceFunction | ServiceEntry)[] }) => <P extends EnhancedProps>(
+const enhComponent = (fn: (props?: Record<string, any>) => { hooks: (HookFunction | HookEntry)[], services: (ServiceFunction | ServiceEntry)[] }) => <P extends EnhancedProps>(
     Component: ComponentType<P>
 )  => {
     return (props: P) => {
