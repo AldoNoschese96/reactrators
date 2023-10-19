@@ -29,11 +29,11 @@ const _composeFns = (toCompose: (InjectableFunction | InjectableEntry)[]): Recor
         return acc
     }, {});
 }
-const composable = (fn: (props?: Record<string, any>) => { injectable: (InjectableFunction | InjectableEntry)[] }) => <P extends EnhancedProps>(
+const composable = (fn: (props?: Record<string, any>) => (InjectableFunction | InjectableEntry)[] ) => <P extends EnhancedProps>(
     Component: ComponentType<P>
 )  => {
     return (props: P) => {
-        const { injectable } = fn();
+        const injectable = fn();
         const toInject = _composeFns(injectable);
         return React.createElement(Component, { ...toInject, ...props });
     }
