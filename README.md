@@ -21,8 +21,9 @@ You can install Reactrators via npm or yarn:
 ```bash
 npm install reactrators
 yarn add reactrators
+```
 
-
+```jsx
 const Template = ({ films = [] }) => {
   return (
     <div>
