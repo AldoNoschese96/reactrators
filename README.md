@@ -47,7 +47,7 @@ const useSwapi = () => {
 
 const FilmsDTO = ({ data, isLoading = false, isError = false }): any => {
   if(data) {
-    return { url: data?.url, films: data?.films };
+    return { films: data?.films };
   }
   return { films: [] };
 };
