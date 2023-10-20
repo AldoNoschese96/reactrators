@@ -23,6 +23,8 @@ npm install reactrators
 yarn add reactrators
 ```
 
+## Example usage
+
 ```jsx
 const Template = ({ films = [] }) => {
   return (
