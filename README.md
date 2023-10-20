@@ -23,7 +23,7 @@ npm install reactrators
 yarn add reactrators
 
 
-```jsx
+
 const Template = ({ films = [] }) => {
   return (
     <div>
@@ -53,4 +53,4 @@ export const MyComponentOverriding = composable((props: any) => (
 ), {
   chainable: true,
 })(Template);
-```
+
