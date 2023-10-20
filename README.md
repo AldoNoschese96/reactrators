@@ -35,6 +35,7 @@ const Template = ({ films = [] }) => {
     </div>
   );
 };
+
 const useSwapi = () => {
   const { data, isLoading, isError } = useQuery(['people'], fetchPeople);
   return {
@@ -43,6 +44,7 @@ const useSwapi = () => {
     isError
   }
 };
+
 const FilmsDTO = ({ data, isLoading = false, isError = false }): any => {
   if(data) {
     return { url: data?.url, films: data?.films };
