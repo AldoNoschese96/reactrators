@@ -32,7 +32,6 @@ const Template = (props: any) => {
         </div>
     )
 }
-
 const TemplateChainable = (props: any) => {
     return (
         <div>
@@ -42,7 +41,6 @@ const TemplateChainable = (props: any) => {
         </div>
     )
 }
-
 const TemplateOverriding = (props: any) => {
     return (
         <div>
@@ -50,7 +48,6 @@ const TemplateOverriding = (props: any) => {
         </div>
     )
 }
-
 const MyComponent = composable((props: any) => (
     [
         [fn1, { miaprops: "CIAO" }],
