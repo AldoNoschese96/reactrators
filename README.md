@@ -38,10 +38,7 @@ const Template = ({ films = [] }) => {
 
 const useSwapi = () => {
   const { data, isLoading, isError } = useQuery(['people'], fetchPeople);
-  return {
-    data,
-    isLoading,
-    isError
+  return { data, isLoading, isError }
   }
 };
 
