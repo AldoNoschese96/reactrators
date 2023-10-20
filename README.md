@@ -55,3 +55,38 @@ export const MyComponentOverriding = composable((props: any) => (
   chainable: true,
 })(Template);
 
+## Example usage (No Chainable)
+
+```jsx
+interface TemplateProps {
+    title: string;
+    endString?: string;
+}
+
+const Template = (props: TemplateProps) => {
+    return (
+        <div>
+            <p>{props.endString}</p>
+            <p>{props.title}</p>
+        </div>
+    )
+}
+const useTestableHook = (props) => {
+    let testable = "TESTABLE";
+    return {
+        endString: testable + "-" + props.title,
+    }
+}
+
+const MyComponent = composable((props: any) => (
+    [
+        [useTestableHook, { ...props }]
+    ]
+), {
+    chainable: false,
+})(Template);
+```
+
+
+
+
