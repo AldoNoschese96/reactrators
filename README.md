@@ -23,7 +23,7 @@ npm install reactrators
 yarn add reactrators
 
 
-
+```bash
 const Template = ({ films = [] }) => {
   return (
     <div>
