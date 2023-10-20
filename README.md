@@ -53,4 +53,4 @@ export const MyComponentOverriding = composable((props: any) => (
 ), {
   chainable: true,
 })(Template);
-
+```
