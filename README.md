@@ -21,3 +21,36 @@ You can install Reactrators via npm or yarn:
 ```bash
 npm install reactrators
 yarn add reactrators
+
+
+```jsx
+const Template = ({ films = [] }) => {
+  return (
+    <div>
+      {films.map((film: any) => (
+        <p key={film}>{film}</p>
+      ))}
+    </div>
+  );
+};
+const useSwapi = () => {
+  const { data, isLoading, isError } = useQuery(['people'], fetchPeople);
+  return {
+    data,
+    isLoading,
+    isError
+  }
+};
+const FilmsDTO = ({ data, isLoading = false, isError = false }): any => {
+  if(data) {
+    return { url: data?.url, films: data?.films };
+  }
+  return { films: [] };
+};
+
+export const MyComponentOverriding = composable((props: any) => (
+  [useSwapi, FilmsDTO]
+), {
+  chainable: true,
+})(Template);
+
