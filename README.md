@@ -72,6 +72,7 @@ const Template = (props: TemplateProps) => {
         </div>
     )
 }
+
 const useTestableHook = (props) => {
     let testable = "TESTABLE";
     return {
